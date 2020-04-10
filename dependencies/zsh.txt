@@ -1,2 +1,1 @@
 git@github.com:geometry-zsh/geometry.git
-git@github.com:zsh-users/zsh-autosuggestions.git
