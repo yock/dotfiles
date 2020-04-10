@@ -1,2 +1,7 @@
+zsh
+zsh-completions
+zsh-autosuggestions
 rbenv
 nodenv
+gnupg
+pinentry-mac
