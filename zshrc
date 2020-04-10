@@ -2,6 +2,7 @@ eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
 source $INSTALL_DIR/packages/geometry/geometry.zsh
+source $INSTALL_DIR/packages/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH

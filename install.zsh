@@ -61,7 +61,7 @@ cp -rf packages $INSTALL_DIR/packages
 cp -f zshrc $INSTALL_DIR/zshrc
 
 # Insert the INSTALL_DIR variable into the installed run control file
-sed -i -e "1 i\\
+sed -i "" -e "1 i\\
 INSTALL_DIR=$INSTALL_DIR\\
 " $INSTALL_DIR/zshrc
 
