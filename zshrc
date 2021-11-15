@@ -15,6 +15,8 @@ if type brew &>/dev/null; then
 fi
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/myockey/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 for file in $INSTALL_DIR/functions/*.zsh; do
   source $file
