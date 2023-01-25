@@ -1,7 +1,9 @@
+git
 zsh
 zsh-completions
 zsh-autosuggestions
 rbenv
+ruby-build
 nodenv
 gnupg
 pinentry-mac

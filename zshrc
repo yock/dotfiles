@@ -31,5 +31,6 @@ export COMPLETION_WAITING_DOTS="true"
 export TERM="xterm-256color"
 export GPG_TTY=$(tty)
 export EDITOR="code -nw"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 export PATH="/usr/local/sbin:$PATH"

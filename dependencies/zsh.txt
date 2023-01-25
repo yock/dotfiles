@@ -1,1 +1,0 @@
-git@github.com:geometry-zsh/geometry.git

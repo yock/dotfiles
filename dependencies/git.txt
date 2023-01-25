@@ -1,0 +1,2 @@
+git@github.com:geometry-zsh/geometry.git
+git@github.com:rbenv/rbenv-default-gems.git

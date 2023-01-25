@@ -1,0 +1,6 @@
+awesome_print
+bundler
+byebug
+pry
+pry-byebug
+pry-nav
