@@ -59,6 +59,8 @@ popd
 mkdir -p $INSTALL_DIR
 cp -rf packages $INSTALL_DIR/packages
 cp -f zshrc $INSTALL_DIR/zshrc
+cp -rf functions $INSTALL_DIR/functions
+cp -f env $INSTALL_DIR/.env
 
 # Insert the INSTALL_DIR variable into the installed run control file
 sed -i "" -e "1 i\\
