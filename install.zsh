@@ -34,6 +34,7 @@ done < ../dependencies/git.txt
 popd
 
 # Post-install
+touch ./env
 mkdir -p $INSTALL_DIR
 cp -rf packages $INSTALL_DIR/
 cp -f zshrc $INSTALL_DIR/zshrc
