@@ -15,4 +15,29 @@ else
   Pry.print = proc { |output, value| output.puts value.ai({ limit: true }) }
   puts 'AwesomePrint available in this session'
 end
-Pry.config.editor = proc { |file, line| "code --wait --goto #{file}:#{line} --disable-workspace-trust" }
+Pry.config.editor = proc { |file, line| "nvim +'#{line}|norm! zt' file" }
+
+# Pry::Commands.create_command 'benchmark' do
+#   description <<~DESCRIPTION
+#     Benchmark a block of code. The block is executed 100 times and the average
+#     time is displayed. The result of the block is also returned.
+# 
+#     Usage: benchmark do
+#              # code to benchmark
+#            end
+#   DESCRIPTION
+# 
+#   banner <<~BANNER
+#     Usage: benchmark do
+#              # code to benchmark
+#            end
+#   BANNER
+# 
+#   command_options takes_block: true
+# 
+#   def process
+#     start = Time.now
+#     command_block
+#     output.puts "Time elapsed #{Time.now - start} seconds"
+#   end
+# end

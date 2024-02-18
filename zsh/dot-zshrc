@@ -1,11 +1,8 @@
+source ~/.env
+
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
-
-while IFS= read -r line; do
-  export $line
-done <$INSTALL_DIR/.env
-
-source $INSTALL_DIR/packages/geometry/geometry.zsh
+eval "$(zoxide init --cmd cd zsh)"
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -16,11 +13,7 @@ fi
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/myockey/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-
-for file in $INSTALL_DIR/functions/*.zsh; do
-  source $file
-done
+HEROKU_AC_ZSH_SETUP_PATH=/Users/myockey/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH
 
 typeset -U path cdpath fpath
 setopt auto_cd
@@ -34,5 +27,9 @@ export TERM="xterm-256color"
 export GPG_TTY=$(tty)
 export EDITOR="code -nw"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
 export PATH="/usr/local/sbin:$PATH"
+
+for file in $HOME/.functions/*.zsh; do
+  source $file
+done
+source $HOME/.scripts/geometry/geometry.zsh

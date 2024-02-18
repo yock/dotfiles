@@ -1,9 +1,12 @@
+fzf
 git
+gnupg
+nodenv
+pinentry-mac
+rbenv
+ruby-build
+stow
+zoxide
 zsh
 zsh-completions
 zsh-autosuggestions
-rbenv
-ruby-build
-nodenv
-gnupg
-pinentry-mac
