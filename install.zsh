@@ -23,3 +23,4 @@ popd
 echo "Linking files"
 stow --dotfiles -t ~ zsh
 stow --dotfiles -t ~ ruby
+stow --dotfiles -t ~ nvim
