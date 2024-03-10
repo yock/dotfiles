@@ -4,4 +4,5 @@ return {
   'f-person/git-blame.nvim',
   'kylechui/nvim-surround',
   'nvim-lua/plenary.nvim',
+  'mfussenegger/nvim-dap',
 }
