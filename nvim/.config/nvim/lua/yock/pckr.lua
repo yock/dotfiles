@@ -17,10 +17,10 @@ end
 bootstrap_pckr()
 
 require('pckr').add{
-	{ 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } },
-	{ 'kepano/flexoki-neovim' },
+  { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } },
+	'kepano/flexoki-neovim',
 	{ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
-	{ 'mbbill/undotree' },
+	'mbbill/undotree',
 	{
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
@@ -37,5 +37,9 @@ require('pckr').add{
 			{ 'saadparwaiz1/cmp_luasnip' },
 		},
 	},
-  { 'zbirenbaum/copilot-cmp', requires = { 'github/copilot.lua' } },
+  'f-person/git-blame.nvim',
+  'github/copilot.vim',
+  'laytan/cloak.nvim',
+  'kylechui/nvim-surround',
+  'mogulla3/rspec.nvim',
 }
