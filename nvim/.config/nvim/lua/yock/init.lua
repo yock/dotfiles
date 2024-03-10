@@ -1,3 +1,3 @@
-require('yock.pckr')
-require('yock.remap')
+require('yock.lazy')
 require('yock.set')
+require('yock.remap')

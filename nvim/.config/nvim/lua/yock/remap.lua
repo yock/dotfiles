@@ -17,3 +17,12 @@ vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+
+vim.keymap.set('n', '<leader>pf', function() require('telescope.builtin').find_files() end)
+vim.keymap.set('n', '<C-p>', require('telescope.builtin').git_files, {})
+vim.keymap.set('n', '<leader>ps', function()
+        require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") });
+end)
+
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
