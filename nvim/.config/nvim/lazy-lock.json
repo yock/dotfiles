@@ -1,6 +1,7 @@
 {
   "auto-dark-mode.nvim": { "branch": "master", "commit": "e328dc463d238cb7d690fb4daf068eba732a5a14" },
   "cloak.nvim": { "branch": "main", "commit": "9abe4e986e924fc54a972c1b0ff52b65a0622624" },
+  "copilot.vim": { "branch": "release", "commit": "3b39e786d865df9ba77fe61624d6ee646528a809" },
   "flexoki": { "branch": "main", "commit": "975654bce67514114db89373539621cff42befb5" },
   "flexoki-neovim": { "branch": "main", "commit": "975654bce67514114db89373539621cff42befb5" },
   "friendly-snippets": { "branch": "main", "commit": "dcd4a586439a1c81357d5b9d26319ae218cc9479" },

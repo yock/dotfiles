@@ -5,4 +5,5 @@ return {
   'kylechui/nvim-surround',
   'nvim-lua/plenary.nvim',
   'mfussenegger/nvim-dap',
+  'github/copilot.vim',
 }
