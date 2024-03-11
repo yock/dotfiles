@@ -8,13 +8,27 @@ return {
   config = function()
     require('mason').setup({})
     require('mason-lspconfig').setup({
+      automatic_install = true,
       ensure_installed = {
         'ruby_ls',
         'rubocop',
-        'tsserver',
         'lua_ls',
+        'angularls',
+        'tsserver',
       },
       handlers = {
+        tsserver = function()
+          require('lspconfig').tsserver.setup({})
+        end,
+        rubocop = function()
+          require('lspconfig').rubocop.setup({})
+        end,
+        ruby_ls = function()
+          require('lspconfig').ruby_ls.setup({})
+        end,
+        angularls = function()
+          require('lspconfig').angularls.setup({})
+        end,
         lua_ls = function()
           require('lspconfig').lua_ls.setup({
             settings = {
