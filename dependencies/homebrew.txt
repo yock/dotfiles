@@ -1,4 +1,5 @@
 fzf
+gh
 git
 gnupg
 nodenv
@@ -6,6 +7,7 @@ pinentry-mac
 rbenv
 ruby-build
 stow
+wget
 zoxide
 zsh
 zsh-completions
