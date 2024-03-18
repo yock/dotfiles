@@ -1,7 +1,7 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'Ex mode' }) 
 
 -- Move highlights
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv") 
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- Paste over without copying what is under
@@ -18,13 +18,13 @@ vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
+-- Diagnostics
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic' })
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Show diagnostic error messages' })
+vim.keymap.set('n', '<leader>do', vim.diagnostic.open_float, { desc = 'Open diagnostic quickfix' })
 
-vim.keymap.set('n', '<leader>pf', function() require('telescope.builtin').find_files() end)
-vim.keymap.set('n', '<C-p>', require('telescope.builtin').git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
-        require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") });
-end)
-
+-- Undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- DAP
@@ -36,3 +36,5 @@ vim.keymap.set('n', '<leader>duo', function() require('dapui').open() end)
 vim.keymap.set('n', '<leader>duc', function() require('dapui').close() end)
 vim.keymap.set('n', '<leader>dut', function() require('dapui').toggle() end)
 
+-- Cloak
+vim.keymap.set('n', '<leader>ct', function() require('cloak').toggle() end, { desc = 'Toggle cloak' })
