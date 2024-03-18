@@ -10,6 +10,7 @@ return {
     require('mason-lspconfig').setup({
       automatic_install = true,
       ensure_installed = {
+        'solargraph',
         'ruby_ls',
         'rubocop',
         'lua_ls',
@@ -17,6 +18,13 @@ return {
         'tsserver',
       },
       handlers = {
+        solargraph = function()
+          require('lspconfig').solargraph.setup({
+            cmd = { 'solargraph', 'stdio' },
+            filetypes = { 'ruby' },
+            root_dir = require('lspconfig.util').root_pattern('.git', '.solargraph.yml'),
+          })
+        end,
         tsserver = function()
           require('lspconfig').tsserver.setup({})
         end,
