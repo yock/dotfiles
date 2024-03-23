@@ -1,18 +1,11 @@
 return {
-  'f-person/auto-dark-mode.nvim',
-  dependencies = { 'kepano/flexoki-neovim' },
-  opts = {
-    update_interval = 1000,
-    set_dark_mode = function()
-      vim.api.nvim_set_option('background', 'dark')
-      vim.cmd('colorscheme flexoki-dark')
-    end,
-    set_light_mode = function()
-      vim.api.nvim_set_option('background', 'light')
-      vim.cmd('colorscheme flexoki-light')
-    end,
+  'catppuccin/nvim',
+  priority = 1000,
+  config = function()
+    require('catppuccin').setup({
+      flavour = 'mocha'
+    })
 
-  },
-  lazy = false,
-  priority = 100,
+    vim.cmd.colorscheme('catppuccin')
+  end,
 }
