@@ -20,7 +20,7 @@ git -C geometry pull || git clone git@github.com:geometry-zsh/geometry.git geome
 popd
 
 echo "Installing TMUX plugins"
-pushd ~/.tmux/plugins
+pushd tmux/.config/tmux/plugins
 git -C tpm pull || git clone git@github.com:tmux-plugins/tpm.git tpm
 popd
 
