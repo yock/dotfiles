@@ -24,3 +24,15 @@ vim.opt.signcolumn = 'yes'
 vim.opt.colorcolumn = '120'
 
 vim.g.mapleader = '\\'
+
+vim.api.nvim_command('filetype plugin on')
+
+vim.api.nvim_create_autocmd(
+  { 'BufNewFile', 'BufRead' },
+  {
+    pattern = 'Guardfile',
+    callback = function()
+      vim.bo.filetype = 'ruby'
+    end,
+  }
+)

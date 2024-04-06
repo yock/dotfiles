@@ -12,5 +12,12 @@ return {
     last_failed_result_path = vim.fn.stdpath('data') .. '/rspec_last_failed_result',
     jump_command = 'edit',
     ignored_dirs_on_jump = {},
-  }
+  },
+  keys = {
+    { '<leader>rn', '<cmd>RSpecNearest<cr>', desc = 'Run nearest spec' },
+    { '<leader>rf', '<cmd>RSpecCurrentFile<cr>', desc = 'Run spec file' },
+    { '<leader>rr', '<cmd>RSpecRerun<cr>', desc = 'Run last spec' },
+    { '<leader>rF', '<cmd>RSpecOnlyFailures<cr>', desc = 'Run previously failed specs' },
+    { '<leader>rR', '<cmd>RSpecShowLastResult<cr>', desc = 'Show last result' },
+  },
 }

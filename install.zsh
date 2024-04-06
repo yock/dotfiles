@@ -9,6 +9,8 @@ fi
 echo "Installing dependencies from Homebrew"
 brew install -q $(< ./dependencies/homebrew.txt)
 
+brew install -q neovim --HEAD
+
 echo "Installing rbenv plugins"
 pushd ruby/.rbenv/plugins
 git -C rbenv-default-gems pull || git clone git@github.com:rbenv/rbenv-default-gems.git rbenv-default-gems
