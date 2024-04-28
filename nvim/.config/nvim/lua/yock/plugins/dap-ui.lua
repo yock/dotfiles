@@ -19,4 +19,9 @@ return {
       dapui.close()
     end
   end,
+  keys = {
+    { '<leader>duo', function() require('dapui').open() end, { desc = 'Open DAP UI' } },
+    { '<leader>duc', function() require('dapui').close() end, { desc = 'Close DAP UI' } },
+    { '<leader>dut', function() require('dapui').toggle() end, { desc = 'Toggle DAP UI' } },
+  },
 }

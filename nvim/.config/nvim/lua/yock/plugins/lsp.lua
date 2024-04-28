@@ -1,14 +1,34 @@
 return {
   'neovim/nvim-lspconfig',
+  dependencies = {
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+  },
   config = function()
     local lspconfig = require('lspconfig')
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    lspconfig.tsserver.setup({})
-    --lspconfig.rubocop.setup({})
-    lspconfig.ruby_ls.setup({})
-    lspconfig.angularls.setup({})
+    lspconfig.tsserver.setup({ capabilities = capabilities })
+    lspconfig.ruby_lsp.setup({ capabilities = capabilities })
+    lspconfig.angularls.setup({ capabilities = capabilities })
+    lspconfig.emmet_ls.setup({
+      capabilities = capabilities,
+      filetypes = {
+        'html',
+        'eruby',
+        'css',
+        'scss',
+        'sass',
+        'javascript',
+        'typescript',
+        'javascriptreact',
+        'typescriptreact'
+      },
+    })
     lspconfig.lua_ls.setup({
       settings = {
+        capabilities = capabilities,
         Lua = {
           diagnostics = {
             globals = {
@@ -19,10 +39,16 @@ return {
         }
       }
     })
+    lspconfig.gopls.setup({ capabilities = capabilities })
+    lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if client.server_capabilities.inlayHintProvider then
+          vim.lsp.inlay_hint.enable(ev.buf, true)
+        end
         -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 

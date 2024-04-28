@@ -1,11 +1,16 @@
+fd
 fzf
 gh
 git
 gnupg
+golang
 nodenv
+nodenv/nodenv/nodenv-default-packages
 pinentry-mac
 rbenv
 ruby-build
+rust
+rust-analyzer
 stow
 tmux
 wget

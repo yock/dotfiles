@@ -26,5 +26,8 @@ return {
         replace = nil,
       },
     },
-  }
+  },
+  keys = {
+    { '<Leader>ct', function() require('cloak').toggle() end, { desc = 'Toggle cloak' } },
+  },
 }

@@ -19,15 +19,3 @@ vim.keymap.set('n', '<leader>do', vim.diagnostic.open_float, { desc = 'Open diag
 
 -- Undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-
--- DAP
-vim.keymap.set('n', '<leader>dtb', function() require('dap').toggle_breakpoint() end)
-vim.keymap.set('n', '<leader>dc', function() require('dap').continue() end)
-vim.keymap.set('n', '<leader>dso', function() require('dap').step_over() end)
-vim.keymap.set('n', '<leader>dsi', function() require('dap').step_into() end)
-vim.keymap.set('n', '<leader>duo', function() require('dapui').open() end)
-vim.keymap.set('n', '<leader>duc', function() require('dapui').close() end)
-vim.keymap.set('n', '<leader>dut', function() require('dapui').toggle() end)
-
--- Cloak
-vim.keymap.set('n', '<leader>ct', function() require('cloak').toggle() end, { desc = 'Toggle cloak' })
