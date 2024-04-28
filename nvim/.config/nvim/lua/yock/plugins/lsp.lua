@@ -27,8 +27,8 @@ return {
       },
     })
     lspconfig.lua_ls.setup({
+      capabilities = capabilities,
       settings = {
-        capabilities = capabilities,
         Lua = {
           diagnostics = {
             globals = {
