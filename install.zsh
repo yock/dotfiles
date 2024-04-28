@@ -9,6 +9,7 @@ fi
 echo "Installing dependencies from Homebrew"
 brew install -q $(< ./dependencies/homebrew.txt)
 
+echo "Installing Neovim HEAD"
 brew install -q neovim --HEAD
 
 echo "Installing rbenv plugins"

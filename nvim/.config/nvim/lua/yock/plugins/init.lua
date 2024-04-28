@@ -1,5 +1,4 @@
 return {
-  { 'kepano/flexoki-neovim', name = 'flexoki', lazy = false },
   'mbbill/undotree',
   'f-person/git-blame.nvim',
   'nvim-lua/plenary.nvim',

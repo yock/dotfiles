@@ -4,6 +4,7 @@ gh
 git
 gnupg
 golang
+lua-language-server
 nodenv
 nodenv/nodenv/nodenv-default-packages
 pinentry-mac
