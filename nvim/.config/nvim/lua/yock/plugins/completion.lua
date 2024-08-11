@@ -39,6 +39,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp:ruby_lsp' },
+        { name = 'nvim_lsp:gopls' },
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
