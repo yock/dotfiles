@@ -15,7 +15,6 @@ return {
     'Dynge/gitmoji.nvim',
     'SergioRibera/cmp-dotenv',
   },
-  build = 'make install jsregexp',
   config = function()
     local cmp = require('cmp')
     local luasnip = require('luasnip')
