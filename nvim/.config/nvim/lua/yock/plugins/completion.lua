@@ -43,12 +43,6 @@ return {
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
-        { name = 'cmdline' },
-        { name = 'rpncalc' },
-        { name = 'emoji' },
-        { name = 'gitmoji' },
-        { name = 'tmux' },
-        { name = 'zsh' },
         { name = 'dotenv' },
       })
     })
