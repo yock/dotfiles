@@ -16,6 +16,7 @@ rust-analyzer
 stow
 tmux
 tmuxp
+wezterm
 wget
 zoxide
 zsh
