@@ -9,6 +9,15 @@ return {
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+    lspconfig.pylsp.setup({ capabilities = capabilities })
+    lspconfig.ruff_lsp.setup({
+      capabilities = capabilities,
+      init_options = {
+        settings = {
+          args = { '--preview' },
+        },
+      },
+    })
     lspconfig.tsserver.setup({ capabilities = capabilities })
     lspconfig.ruby_lsp.setup({ capabilities = capabilities })
     lspconfig.angularls.setup({ capabilities = capabilities })
@@ -41,6 +50,7 @@ return {
     })
     lspconfig.gopls.setup({ capabilities = capabilities })
     lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+    lspconfig.sourcekit.setup({ capabilities = capabilities })
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),

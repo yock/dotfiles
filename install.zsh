@@ -24,7 +24,6 @@ pushd tmux/.config/tmux/plugins
 git -C tpm pull || git clone git@github.com:tmux-plugins/tpm.git tpm
 popd
 
-
 echo "Linking files"
 stow --dotfiles -t ~ zsh
 stow --dotfiles -t ~ ruby

@@ -1,7 +1,16 @@
 source ~/.env
 
+# rbenv
 eval "$(rbenv init -)"
+
+# nodenv
 eval "$(nodenv init -)"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 eval "$(zoxide init --cmd cd zsh)"
 
 if type brew &>/dev/null; then
@@ -26,8 +35,16 @@ export COMPLETION_WAITING_DOTS="true"
 export TERM="xterm-256color"
 export GPG_TTY=$(tty)
 export EDITOR="nvim"
+export GREP_COLOR="1;36"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export PATH="$HOME/go/bin:$(npm -g bin):/usr/local/sbin:$PATH"
+
+# Enable color support of ls
+if ls --color=auto &>/dev/null; then
+	alias ls='ls -p --color=auto'
+else
+	alias ls='ls -p -G'
+fi
 
 for file in $HOME/.functions/*.zsh; do
   source $file
