@@ -23,6 +23,8 @@ vim.opt.signcolumn = 'yes'
 
 vim.opt.colorcolumn = '120'
 
+vim.wo.relativenumber = true
+
 vim.g.mapleader = '\\'
 
 vim.api.nvim_command('filetype plugin on')
