@@ -36,7 +36,6 @@ export TERM="xterm-256color"
 export GPG_TTY=$(tty)
 export EDITOR="nvim"
 export GREP_COLOR="1;36"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export PATH="$HOME/go/bin:$(npm -g bin):/usr/local/sbin:$PATH"
 
 # Enable color support of ls
