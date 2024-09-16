@@ -1,3 +1,4 @@
+direnv
 fd
 fzf
 gh
