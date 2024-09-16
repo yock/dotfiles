@@ -43,9 +43,9 @@ export PATH="$HOME/go/bin:$(npm -g bin):/usr/local/sbin:$PATH"
 
 # Enable color support of ls
 if ls --color=auto &>/dev/null; then
-	alias ls='ls -p --color=auto'
+  alias ls='ls -p --color=auto'
 else
-	alias ls='ls -p -G'
+  alias ls='ls -p -G'
 fi
 
 for file in $HOME/.functions/*.zsh; do
