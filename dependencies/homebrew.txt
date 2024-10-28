@@ -1,4 +1,5 @@
 direnv
+fastfetch
 fd
 fzf
 gh
