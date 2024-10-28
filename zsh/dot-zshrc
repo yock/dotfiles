@@ -18,6 +18,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  export PATH="/usr/local/sbin:$PATH"
 
   autoload -Uz compinit
   compinit
