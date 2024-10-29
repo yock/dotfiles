@@ -51,6 +51,7 @@ return {
     lspconfig.gopls.setup({ capabilities = capabilities })
     lspconfig.rust_analyzer.setup({ capabilities = capabilities })
     lspconfig.sourcekit.setup({ capabilities = capabilities })
+    lspconfig.sqlls.setup({ capabilities = capabilities })
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
