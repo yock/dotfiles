@@ -10,14 +10,6 @@ return {
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
     lspconfig.pylsp.setup({ capabilities = capabilities })
-    lspconfig.ruff_lsp.setup({
-      capabilities = capabilities,
-      init_options = {
-        settings = {
-          args = { '--preview' },
-        },
-      },
-    })
     lspconfig.ts_ls.setup({ capabilities = capabilities })
     lspconfig.ruby_lsp.setup({ capabilities = capabilities })
     lspconfig.angularls.setup({ capabilities = capabilities })
