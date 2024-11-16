@@ -6,7 +6,6 @@ gh
 git
 gnupg
 golang
-lua-language-server
 rbenv
 ruby-build
 stow
