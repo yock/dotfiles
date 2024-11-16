@@ -20,6 +20,7 @@ case `uname` in
     curl -O "https://github.com/LuaLS/lua-language-server/releases/download/3.13.0/lua-language-server-3.13.0-linux-x64.tar.gz"
     tar -xf lua-language-server-3.13.0-linux-x64.tar.gz -av -C ./lua-language-server
     ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
+    popd
 
     echo "Installing dependencies with Apt"
     sudo apt-add-repository -y --ppa ppa:zhangsongcui3371/fastfetch
