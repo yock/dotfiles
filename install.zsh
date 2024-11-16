@@ -12,6 +12,8 @@ case `uname` in
     brew install -q $(< ./dependencies/homebrew.txt)
   ;;
   Linux)
+    echo "Installing dependencies with Apt"
+    sudo apt install $(< ./dependencies/apt.txt)
   ;;
 esac
 
