@@ -12,6 +12,15 @@ case `uname` in
     brew install -q $(< ./dependencies/homebrew.txt)
   ;;
   Linux)
+    mkdir -p ~/.local/share
+    mkdir -p ~/.local/bin
+    pushd ~/.local/share
+    echo "Installing Lua Language Server"
+    mkdir -p lua-language-server
+    curl -O "https://github.com/LuaLS/lua-language-server/releases/download/3.13.0/lua-language-server-3.13.0-linux-x64.tar.gz"
+    tar -xf lua-language-server-3.13.0-linux-x64.tar.gz -av -C ./lua-language-server
+    ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
+
     echo "Installing dependencies with Apt"
     sudo apt-add-repository -y --ppa ppa:zhangsongcui3371/fastfetch
     sudo apt install $(< ./dependencies/apt.txt)

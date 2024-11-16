@@ -52,3 +52,10 @@ for file in $HOME/.functions/*.zsh; do
   source $file
 done
 source $HOME/.scripts/geometry/geometry.zsh
+
+case `uname` in
+  Linux)
+    export PATH=/home/myockey/.local/bin:$PATH
+  ;;
+esac
+
