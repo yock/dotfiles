@@ -1,13 +1,19 @@
 #!/bin/zsh
 
-which brew > /dev/null
-if (( $? != 0 )); then
-    echo "First installing Homebrew"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
+case `uname` in
+  Darwin)
+    which brew > /dev/null
+    if (( $? != 0 )); then
+      echo "First installing Homebrew"
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
 
-echo "Installing dependencies from Homebrew"
-brew install -q $(< ./dependencies/homebrew.txt)
+    echo "Installing dependencies from Homebrew"
+    brew install -q $(< ./dependencies/homebrew.txt)
+  ;;
+  Linux)
+  ;;
+esac
 
 echo "Installing rbenv plugins"
 pushd ruby/.rbenv/plugins
