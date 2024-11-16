@@ -7,13 +7,8 @@ git
 gnupg
 golang
 lua-language-server
-nodenv
-nodenv/nodenv/nodenv-default-packages
-pyenv
 rbenv
 ruby-build
-rust
-rust-analyzer
 stow
 tmux
 tmuxp
