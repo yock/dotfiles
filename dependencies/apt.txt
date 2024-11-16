@@ -1,6 +1,6 @@
 direnv
 fastfetch
-fd
+fd-find
 fzf
 gh
 git
