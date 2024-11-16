@@ -17,7 +17,7 @@ case `uname` in
     pushd ~/.local/share
     echo "Installing Lua Language Server"
     mkdir -p lua-language-server
-    curl -O "https://github.com/LuaLS/lua-language-server/releases/download/3.13.0/lua-language-server-3.13.0-linux-x64.tar.gz"
+    curl -L -O "https://github.com/LuaLS/lua-language-server/releases/download/3.13.0/lua-language-server-3.13.0-linux-x64.tar.gz"
     tar -xf lua-language-server-3.13.0-linux-x64.tar.gz -av -C ./lua-language-server
     ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
     popd
