@@ -13,6 +13,7 @@ case `uname` in
   ;;
   Linux)
     echo "Installing dependencies with Apt"
+    sudo apt-add-repository -y --ppa ppa:zhangsongcui3371/fastfetch
     sudo apt install $(< ./dependencies/apt.txt)
   ;;
 esac
