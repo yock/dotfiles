@@ -15,7 +15,7 @@ case `uname` in
     mkdir -p ~/.local/share
     mkdir -p ~/.local/bin
 
-    if [[ ! -a ../bin/lua-language-server ]]; then
+    if [[ ! -a ~/.local/bin/lua-language-server ]]; then
       echo "Installing Lua Language Server"
       pushd ~/.local/share
       mkdir -p lua-language-server
@@ -25,7 +25,7 @@ case `uname` in
       popd
     fi
 
-    if [[ ! -a ../bin/nvim ]]; then
+    if [[ ! -a ~/.local/bin/nvim ]]; then
       echo "Installing Installing Neovim"
       pushd ~/.local/bin
       curl -LO nvim https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
