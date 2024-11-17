@@ -8,6 +8,7 @@ gnupg
 golang
 libfuse2t64
 rbenv
+ripgrep
 ruby-build
 stow
 tmux
