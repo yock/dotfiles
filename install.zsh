@@ -28,7 +28,7 @@ case `uname` in
     if [[ ! -a ~/.local/bin/nvim ]]; then
       echo "Installing Installing Neovim"
       pushd ~/.local/bin
-      curl -LO nvim https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+      curl -L -O nvim https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
       chmod u+x nvim
       popd
     fi
