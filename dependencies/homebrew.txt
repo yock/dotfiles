@@ -4,6 +4,7 @@ fd
 fzf
 gh
 git
+gitkraken-cli
 gnupg
 golang
 lua-language-server
