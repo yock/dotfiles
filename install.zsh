@@ -14,17 +14,24 @@ case `uname` in
   Linux)
     mkdir -p ~/.local/share
     mkdir -p ~/.local/bin
-    pushd ~/.local/share
 
     if [[ ! -a ../bin/lua-language-server ]]; then
       echo "Installing Lua Language Server"
+      pushd ~/.local/share
       mkdir -p lua-language-server
       curl -L -O "https://github.com/LuaLS/lua-language-server/releases/download/3.13.0/lua-language-server-3.13.0-linux-x64.tar.gz"
       tar -xf lua-language-server-3.13.0-linux-x64.tar.gz -av -C ./lua-language-server
       ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
+      popd
     fi
 
-    popd
+    if [[ ! -a ../bin/nvim ]]; then
+      echo "Installing Installing Neovim"
+      pushd ~/.local/bin
+      curl -LO nvim https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+      chmod u+x nvim
+      popd
+    fi
 
     echo "Installing dependencies with Apt"
     sudo apt-add-repository -y --ppa ppa:zhangsongcui3371/fastfetch
