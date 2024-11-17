@@ -34,6 +34,7 @@ case `uname` in
     fi
 
     echo "Installing dependencies with Apt"
+    sudo apt-add-repository -y universe
     sudo apt-add-repository -y --ppa ppa:zhangsongcui3371/fastfetch
     sudo apt install $(< ./dependencies/apt.txt)
   ;;

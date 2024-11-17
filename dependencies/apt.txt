@@ -6,6 +6,7 @@ gh
 git
 gnupg
 golang
+libfuse2t64
 rbenv
 ruby-build
 stow
