@@ -14,7 +14,11 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# ZOxide, cd alternative
 eval "$(zoxide init --cmd cd zsh)"
+
+# atuin, shell command stats
+eval "$(atuin init zsh)"
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
