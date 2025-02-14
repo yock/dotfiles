@@ -1,0 +1,35 @@
+[colors]
+ansi = [
+  "#232323",
+  "#d4823d",
+  "#8c9e3d",
+  "#b1942b",
+  "#6e9cb0",
+  "#b58d88",
+  "#6da280",
+  "#949d9f",
+]
+brights = [
+  "#312e30",
+  "#d0913d",
+  "#96a42d",
+  "#a8a030",
+  "#8e9cc0",
+  "#d58888",
+  "#7aa880",
+  "#aeadaf",
+]
+
+cursor_bg = "#aeadaf"
+cursor_border = "#aeadaf"
+cursor_fg = "#232323"
+background = "#232323"
+foreground = "#aeadaf"
+selection_bg = "#aeadaf"
+selection_fg = "#232323"
+
+[metadata]
+name = "Tempus Classic"
+aliases = ["Tempus Classic"]
+author = "protesilaos"
+origin_url = "https://github.com/protesilaos/tempus-themes/blob/master/yaml/tempus_past.yml"
