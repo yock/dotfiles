@@ -1,3 +1,6 @@
+local LIGHT_THEME = 'Tempus Past'
+local DARK_THEME = 'Tempus Classic'
+
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 config.font = wezterm.font('TX-02')
@@ -12,9 +15,9 @@ end
 
 local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'Tempus Classic'
+    return DARK_THEME
   else
-    return 'Tempus Past'
+    return LIGHT_THEME
   end
 end
 
