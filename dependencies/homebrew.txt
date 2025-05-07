@@ -8,6 +8,7 @@ git
 gitkraken-cli
 gnupg
 golang
+lazygit
 lua-language-server
 nodenv
 nodenv/nodenv/nodenv-default-packages

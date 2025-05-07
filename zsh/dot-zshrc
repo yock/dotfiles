@@ -62,4 +62,3 @@ case `uname` in
     export PATH=/home/myockey/.local/bin:$PATH
   ;;
 esac
-

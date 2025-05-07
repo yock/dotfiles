@@ -1,47 +1,12 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'L3MON4D3/LuaSnip',
+    'saghen/blink.cmp',
   },
   config = function()
     local lspconfig = require('lspconfig')
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    local cmp = require('cmp')
-    local luasnip = require('luasnip')
-    require('luasnip.loaders.from_vscode').lazy_load()
-
-    -- Completion
-    luasnip.filetype_extend('ruby', { 'rails' })
-
-    cmp.setup({
-      snippet = {
-        expand = function(args)
-          luasnip.lsp_expand(args.body)
-        end,
-      },
-      window = {
-        completion = cmp.config.window.bordered(),
-      },
-      mapping = cmp.mapping.preset.insert({
-        ['<C-j>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-k>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      }),
-      sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-      }, {
-        { name = 'buffer' },
-      })
-    })
-
-    -- LSP
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
+    local capabilities = require('blink.cmp').get_lsp_capabilities(lsp_capabilities) 
 
     lspconfig.pylsp.setup({ capabilities = capabilities })
     lspconfig.ts_ls.setup({ capabilities = capabilities })
@@ -74,6 +39,9 @@ return {
               'vim',
               'require',
               'out',
+              's',
+              'c',
+              't',
             }
           }
         }
@@ -83,6 +51,16 @@ return {
     lspconfig.rust_analyzer.setup({ capabilities = capabilities })
     lspconfig.sourcekit.setup({ capabilities = capabilities })
     lspconfig.sqlls.setup({ capabilities = capabilities })
+
+    local function filteredQuickfix()
+      vim.lsp.buf.code_action({
+        context = { only = { 'quickfix' } },
+        apply = true,
+        filter = function(codeAction)
+          return codeAction.isPreferred
+        end
+      })
+    end
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -98,6 +76,7 @@ return {
         vim.keymap.set('n', '[d', function() vim.diagnostic.goto_next() end, opts)
         vim.keymap.set('n', ']d', function() vim.diagnostic.goto_prev() end, opts)
         vim.keymap.set('n', '<leader>vca', function() vim.lsp.buf.code_action() end, opts)
+        vim.keymap.set('n', '<C-f>', filteredQuickfix, opts)
         vim.keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
         vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set('n', '<leader>vrh', function() vim.lsp.buf.signature_help() end, opts)
