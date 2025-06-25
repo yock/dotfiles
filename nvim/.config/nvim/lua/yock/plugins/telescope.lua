@@ -1,10 +1,14 @@
+local have_make = vim.fn.executable('make') == 1
+local have_cmake = vim.fn.executable('cmake') == 1
+
 return {
   'nvim-telescope/telescope.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+      build = have_make and 'make' or 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+      enabled = have_make or have_cmake,
     }
   },
   config = function()
