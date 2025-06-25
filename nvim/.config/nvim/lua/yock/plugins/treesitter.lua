@@ -14,5 +14,7 @@ return {
     })
 
     vim.cmd('autocmd FileType ruby setlocal indentkeys-=.')
+    vim.opt.foldmethod = 'expr'
+    vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
   end,
 }
