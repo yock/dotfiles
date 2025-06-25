@@ -18,6 +18,7 @@ eval "$(pyenv init -)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # atuin, shell command stats
+PATH="$HOME/.atuin/bin:$PATH"
 eval "$(atuin init zsh)"
 
 if type brew &>/dev/null; then
