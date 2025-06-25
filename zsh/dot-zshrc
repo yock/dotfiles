@@ -63,3 +63,8 @@ case `uname` in
     export PATH=/home/myockey/.local/bin:$PATH
   ;;
 esac
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+eval "$(atuin gen-completions --shell zsh)"
