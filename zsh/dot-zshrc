@@ -80,3 +80,6 @@ esac
 
 eval "$(atuin init zsh)"
 eval "$(atuin gen-completions --shell zsh)"
+
+# opencode
+export PATH=/home/myockey/.opencode/bin:$PATH
