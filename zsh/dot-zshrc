@@ -7,7 +7,9 @@ eval "$(direnv hook zsh)"
 eval "$(rbenv init -)"
 
 # nodenv
-eval "$(nodenv init -)"
+if command -v nodenv &>/dev/null; then
+  eval "$(nodenv init -)"
+fi
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
