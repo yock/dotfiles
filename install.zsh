@@ -61,3 +61,4 @@ stow --dotfiles -t ~ ruby
 stow --dotfiles -t ~ nvim
 stow --dotfiles -t ~ tmux
 stow --dotfiles -t ~ wez
+stow --dotfiles -t ~ ghostty
