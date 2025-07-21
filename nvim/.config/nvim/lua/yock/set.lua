@@ -27,6 +27,8 @@ vim.wo.relativenumber = true
 
 vim.g.mapleader = '\\'
 
+vim.opt.winborder = 'rounded'
+
 vim.api.nvim_command('filetype plugin on')
 
 vim.api.nvim_create_autocmd(
